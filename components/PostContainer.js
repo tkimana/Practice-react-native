@@ -1,6 +1,6 @@
 import React from 'react';
 import PostItem from './PostItem'
-import { StyleSheet, Text, View, TouchableOpacity, ActivityIndicator} from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, ActivityIndicator, Block} from 'react-native';
 
 class PostContainer extends React.Component{
    
@@ -8,25 +8,34 @@ class PostContainer extends React.Component{
     render(){
         console.log(this.props.recipes)
         return(
-            <View style={styles.Itemcontainer}>    
+          <View  style={styles.Itemcontainer}> 
+            <View >    
             {this.props.recipes.map((recipe)=> (
             <PostItem {...recipe} key={recipe.recipe_id} />   
             ))}
+            </View>
             </View>
         )
     }
 }
 const styles = StyleSheet.create({
    Itemcontainer:{
-    borderWidth: 3,
-    borderRadius: 3,
-    borderColor: '#000',
+    borderWidth: 4,
+    borderRadius: 4,
+    flex: '2',
+    borderColor: '#0000',
     width: 300,
     height: 300,
-    padding: 10,
+    padding: "6px 8px 2px",
+    minHeight: 80,
+    minWidth: 272,
     flexDirection: 'row',
-    // justifyContent: 'flex',
-    // alignItems: 'stretch'
+    justifyContent: 'flex',
+    // marginLeft: 9,
+    // marginRight: 8,
+    // marginTop: 8,
+    marginBottom: '2rem',
+    alignItems: 'stretch'
    }      
   });
 

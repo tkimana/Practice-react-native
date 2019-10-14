@@ -28,7 +28,7 @@ class App extends React.Component {
     // console.log(this.state.recipes)
   return (
     <View style={styles.container}>
-     <Text>Hello</Text>
+    
      <PostContainer recipes={this.state.recipes}/>
    
     </View>

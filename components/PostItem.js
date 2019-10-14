@@ -1,14 +1,15 @@
 import React from 'react'
-import { StyleSheet, Text, View, TouchableOpacity, ActivityIndicator, Image, SafeAreaView} from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, ActivityIndicator, Image} from 'react-native';
 
 
 class PostItem extends React.Component{
     render(){
         return(
             <View >
-                <SafeAreaView style={styles.titlecontainer}>
-                  <Text >Title: {this.props.title}</Text> 
-                  </SafeAreaView>
+                <View >
+                  <Text style={styles.titlecontainer}>Title: {this.props.title}</Text> 
+                </View>
+
                 <View >
                     <Image
                     style={{height: 250, width: 250, flexDirection: 'row',  marginVertical: 8,
