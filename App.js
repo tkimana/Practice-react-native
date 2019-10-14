@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, ActivityIndicator} from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, ActivityIndicator, ImageBackground} from 'react-native';
 import PostContainer from './components/PostContainer';
 
 
@@ -27,11 +27,11 @@ class App extends React.Component {
   render(){
     // console.log(this.state.recipes)
   return (
-    <View style={styles.container}>
-    
+    <ImageBackground  source={require('./components/backgroundImage/My Post.jpg')} style={styles.container}>
+
      <PostContainer recipes={this.state.recipes}/>
-   
-    </View>
+
+    </ImageBackground>
   );
   }
 }
@@ -40,9 +40,9 @@ class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+   
   },
 
 });
