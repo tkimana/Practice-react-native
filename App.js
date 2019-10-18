@@ -31,12 +31,13 @@ class App extends React.Component {
 
 
   onChange=(title, publisher, image_url)=>{
+    
    console.log(title, publisher, image_url)
     
   }
  
- handleSubmit=(title, image_url, publisher)=>{
-  
+ handleSubmit=(title, image_url, publisher, e)=>{
+   
   fetch('http://localhost:3000/recipes', {
     method: 'POST',
     headers: {
