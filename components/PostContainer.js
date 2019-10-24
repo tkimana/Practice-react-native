@@ -4,9 +4,7 @@ import { StyleSheet, Text, View, TouchableOpacity, ActivityIndicator, TextInput 
 
 
 class PostContainer extends React.Component {
-    state={
-        text: 'image_url'
-    }
+   
     
 
     render() {
