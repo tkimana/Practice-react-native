@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, View, TouchableOpacity, ActivityIndicator, Image, SafeAreaView} from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, ActivityIndicator, Image} from 'react-native';
 // import Separator from './Separator'
 
 function Separator() {
@@ -11,11 +11,9 @@ function PostItem(props) {
         return(
        
             
-            <SafeAreaView style={styles.container}>
+            <View style={styles.container}>
             
-                <View >
                   <Text style={styles.titlecontainer}>Title: {props.title}</Text> 
-                </View>
 
                 <View style={styles.card}>
                     <Image
@@ -25,11 +23,10 @@ function PostItem(props) {
                     /> 
                 </View>
                
-                <View>
                   <Text style={styles.publishercontainer}>Publisher: {props.publisher}</Text>
-                </View> 
+             
                 <Separator />
-                </SafeAreaView> 
+                </View> 
       
         )
     }
@@ -68,7 +65,7 @@ const styles = StyleSheet.create({
   },
   titlecontainer:{
      fontSize: 20,
-     marginVertical: 16,
+     marginVertical: 20,
      color: 'blue'
     //  marginHorizontal: 16,
   }, 

@@ -68,20 +68,23 @@ class App extends React.Component {
 //  <View style={styles.container}>
 <ScrollView scrollEventThrottle={25}>  
     <ImageBackground   style={styles.container} style={{height: '100%', width: '100%'}} source={require('./components/backgroundImage/img/My Post.jpg')} >
-    {/* <StatusBar hidden/> */}
+    <StatusBar hidden/>
     
-  <TextInput style={styles.InputBox} onChangeText={(title) => this.onChange(title, 'title')}
+  <TextInput style={styles.InputBox} onChangeText={(title) => this.onChange(text, 'title')}
         value={this.state.title}  placeholder="Title" /> 
 
-     <TextInput style={styles.PublisherInput} onChangeText={(publisher) => this.onChange(publisher, 'publisher')}
+     <TextInput style={styles.PublisherInput} onChangeText={(publisher) => this.onChange(text, 'publisher')}
         value={this.state.publisher}  placeholder="Publisher" /> 
 
-    <TextInput style={styles.InputField} onChangeText={(image_url) => this.onChange(image_url, 'image_url')}
+    <TextInput style={styles.InputField} onChangeText={(image_url) => this.onChange(text, 'image_url')}
     value={this.state.image_url}  placeholder="image_url" />
-  <Button  title="Submit" color="#f194ff" onPress={() => this.handleSubmit}
-  />
-     <PostContainer recipes={this.state.recipes}/>
+
+      <TouchableOpacity style={styles.buttonInput} title='submit' onPress={() => this.handleSubmit}>
+        <Text>Submit</Text>
+        </TouchableOpacity>
+
      
+     <PostContainer recipes={this.state.recipes}/>
     </ImageBackground>
     </ScrollView>
   
@@ -129,7 +132,7 @@ const styles = StyleSheet.create({
     width: 300,
     height: '100%',
     backgroundColor: '#B7D4FF',
-    borderRadius: 25,
+    borderRadius: 20,
     paddingHorizontal:16,
     fontSize: 20,
     // color: '#fffff',
@@ -137,6 +140,15 @@ const styles = StyleSheet.create({
     padding:5,
     flex: 1,
     margin: 10
+  },
+  buttonInput:{
+    width: 100,
+    borderRadius: 30,
+    height: 50,
+    backgroundColor: '#76FEC5',
+    margin: 50,
+   
+
   }
 
 });

@@ -15,8 +15,7 @@ class PostContainer extends React.Component {
                 <View >
                     {this.props.recipes.map((recipe) => (
                         <PostItem {...recipe} key={recipe.recipe_id} />
-                    ))}
-                    
+                    ))}    
                 </View>
             </SafeAreaView>
         )
