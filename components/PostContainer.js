@@ -1,6 +1,6 @@
 import React from 'react';
 import PostItem from './PostItem'
-import { StyleSheet, Text, View, TouchableOpacity, ActivityIndicator, TextInput , StatusBar} from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, ActivityIndicator, TextInput , StatusBar, SafeAreaView} from 'react-native';
 
 
 class PostContainer extends React.Component {
@@ -10,7 +10,7 @@ class PostContainer extends React.Component {
     render() {
         console.log(this.props.recipes)
         return (
-            <View style={styles.Itemcontainer}>
+            <SafeAreaView style={styles.Itemcontainer}>
         
                 <View >
                     {this.props.recipes.map((recipe) => (
@@ -18,7 +18,7 @@ class PostContainer extends React.Component {
                     ))}
                     
                 </View>
-            </View>
+            </SafeAreaView>
         )
     }
 }

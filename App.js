@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, ActivityIndicator, ImageBackground, TextInput, StatusBar, Button} from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, ActivityIndicator, ImageBackground, TextInput, StatusBar, Button, ScrollView} from 'react-native';
 import PostContainer from './components/PostContainer';
 
 
@@ -36,7 +36,7 @@ class App extends React.Component {
     
   }
  
- handleSubmit=(title, image_url, publisher, e)=>{
+ handleSubmit=()=>{
    
   fetch('http://localhost:3000/recipes', {
     method: 'POST',
@@ -66,22 +66,25 @@ class App extends React.Component {
    
   return (
 //  <View style={styles.container}>
-    <ImageBackground   source={require('./components/backgroundImage/img/My Post.jpg')} >
+<ScrollView scrollEventThrottle={25}>  
+    <ImageBackground   style={styles.container} style={{height: '100%', width: '100%'}} source={require('./components/backgroundImage/img/My Post.jpg')} >
     {/* <StatusBar hidden/> */}
-      
+    
   <TextInput style={styles.InputBox} onChangeText={(title) => this.onChange(title, 'title')}
-        value={this.state.title} underlineColorAndroid='rgba(0,0,0,0)' placeholder="Title" /> 
+        value={this.state.title}  placeholder="Title" /> 
 
      <TextInput style={styles.PublisherInput} onChangeText={(publisher) => this.onChange(publisher, 'publisher')}
-        value={this.state.publisher} underlineColorAndroid='rgba(0,0,0,0)' placeholder="Publisher" /> 
+        value={this.state.publisher}  placeholder="Publisher" /> 
 
     <TextInput style={styles.InputField} onChangeText={(image_url) => this.onChange(image_url, 'image_url')}
-    value={this.state.image_url} underlineColorAndroid='rgba(0,0,0,0)' placeholder="image_url" />
+    value={this.state.image_url}  placeholder="image_url" />
   <Button  title="Submit" color="#f194ff" onPress={() => this.handleSubmit}
   />
      <PostContainer recipes={this.state.recipes}/>
+     
     </ImageBackground>
-    // </View>
+    </ScrollView>
+  
   );
   }
 }
@@ -89,18 +92,17 @@ class App extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: '#F2F8FD',
     flex: 1,
-    width: '100%',
-    height: '100%',
-    alignItems: 'center',
-    justifyContent: 'center',
+    resizeMode: 'cover',
+    position: 'relative',
    
   },
 
   InputBox:{
    width: 300,
-   backgroundColor: 'rgba(255, 255,255,0.3)',
-   borderRadius: 25,
+   backgroundColor: '#B7D4FF',
+   borderRadius: 30,
    paddingHorizontal:16,
    fontSize: 20,
   //  color: '#fffff',
@@ -113,8 +115,8 @@ const styles = StyleSheet.create({
   InputField:{
     width: 300,
     height: '100%',
-    backgroundColor: 'rgba(255, 255,255,0.3)',
-    borderRadius: 25,
+    backgroundColor: '#B7D4FF',
+    borderRadius: 30,
     paddingHorizontal:16,
     fontSize: 20,
     // color: '#fffff',
@@ -126,7 +128,7 @@ const styles = StyleSheet.create({
   PublisherInput:{
     width: 300,
     height: '100%',
-    backgroundColor: 'rgba(255, 255,255,0.3)',
+    backgroundColor: '#B7D4FF',
     borderRadius: 25,
     paddingHorizontal:16,
     fontSize: 20,
