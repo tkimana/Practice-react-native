@@ -67,7 +67,7 @@ class App extends React.Component {
   return (
 //  <View style={styles.container}>
 <ScrollView scrollEventThrottle={25}>  
-    <ImageBackground   style={styles.container} style={{height: '100%', width: '100%'}} source={require('./components/backgroundImage/img/My Post.jpg')} >
+    <ImageBackground   style={styles.container} style={{height: '100%', width: '100%'}} >
     <StatusBar hidden/>
     
   <TextInput style={styles.InputBox} onChangeText={(title) => this.onChange(title, 'title')}
