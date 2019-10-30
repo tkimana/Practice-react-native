@@ -70,17 +70,17 @@ class App extends React.Component {
     <ImageBackground   style={styles.container} style={{height: '100%', width: '100%'}} source={require('./components/backgroundImage/img/My Post.jpg')} >
     <StatusBar hidden/>
     
-  <TextInput style={styles.InputBox} onChangeText={(title) => this.onChange(text, 'title')}
+  <TextInput style={styles.InputBox} onChangeText={(title) => this.onChange(title, 'title')}
         value={this.state.title}  placeholder="Title" /> 
 
-     <TextInput style={styles.PublisherInput} onChangeText={(publisher) => this.onChange(text, 'publisher')}
+     <TextInput style={styles.PublisherInput} onChangeText={(publisher) => this.onChange(publisher, 'publisher')}
         value={this.state.publisher}  placeholder="Publisher" /> 
 
-    <TextInput style={styles.InputField} onChangeText={(image_url) => this.onChange(text, 'image_url')}
+    <TextInput style={styles.InputField} onChangeText={(image_url) => this.onChange(image_url, 'image_url')}
     value={this.state.image_url}  placeholder="image_url" />
 
-      <TouchableOpacity style={styles.buttonInput} title='submit' onPress={() => this.handleSubmit}>
-        <Text>Submit</Text>
+      <TouchableOpacity style={styles.buttonInput}  onPress={() => this.handleSubmit}>
+        <Text style={styles.button} style={{height: '100%', width: '100%', margin: 10, marginLeft: 43}}>Submit</Text>
         </TouchableOpacity>
 
      
@@ -96,9 +96,9 @@ class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#F2F8FD',
-    flex: 1,
-    resizeMode: 'cover',
-    position: 'relative',
+    // flex: 1,
+    // resizeMode: 'cover',
+    // position: 'relative',
    
   },
 
@@ -142,14 +142,17 @@ const styles = StyleSheet.create({
     margin: 10
   },
   buttonInput:{
-    width: 100,
+    width: 150,
     borderRadius: 30,
-    height: 50,
+    height: 40,
     backgroundColor: '#76FEC5',
-    margin: 50,
+    marginLeft: 50,
    
 
-  }
+  },
+  // buttonText:{
+  //  marginLeft: 100   
+  // }
 
 });
 

@@ -1,6 +1,6 @@
 import React from 'react'
-import { StyleSheet, Text, View, TouchableOpacity, ActivityIndicator, Image} from 'react-native';
-// import Separator from './Separator'
+import { StyleSheet, Text, View, TouchableOpacity, ActivityIndicator, Image, Button} from 'react-native';
+
 
 function Separator() {
   return <View style={styles.separator} />;
@@ -11,22 +11,28 @@ function PostItem(props) {
         return(
        
             
-            <View style={styles.container}>
-            
+         <View style={styles.container}>
+            <View>
                   <Text style={styles.titlecontainer}>Title: {props.title}</Text> 
-
+              </View>
                 <View style={styles.card}>
                     <Image
-                    style={{height: 250, width: 250, marginVertical: 10,
-                    marginHorizontal: 16,}}
+                    style={{height: 230, width: 250, marginVertical: 10,
+                    marginHorizontal: 9,}}
                     source={{uri: props.image_url}}
                     /> 
                 </View>
-               
+                <View>
+                <TouchableOpacity  onPress={() => this.handleChange}>
+             <Text style={styles.button}> Like </Text>
+        </TouchableOpacity>
+                </View>
+                <View>
                   <Text style={styles.publishercontainer}>Publisher: {props.publisher}</Text>
-             
-                <Separator />
+                  </View>
+                  <Separator />
                 </View> 
+                
       
         )
     }
@@ -39,12 +45,11 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    // boxSizing: 'border-box',
-    // float: 'left', 
     flexDirection: 'column',
-    width:  200,
-    padding: 10,
+    width:  300,
+    padding: 4,
     height: 300,
+    marginTop: 300
    },
   
   card:{
@@ -52,8 +57,10 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     borderColor: '#000',
     width: 300,
-    height: 300,
+    height: 270,
     padding: 10,
+    marginBottom: 200,
+    // borderBottomLeftRadius: 200,
     
   },
 
@@ -61,20 +68,33 @@ const styles = StyleSheet.create({
     height: 1,
     width: 1000,
     backgroundColor:'black',
-    marginTop: 20
+    marginTop: 10
   },
   titlecontainer:{
      fontSize: 20,
-     marginVertical: 20,
-     color: 'blue'
-    //  marginHorizontal: 16,
+     fontFamily: 'Cochin', 
+     color: '#2F3640',
+     marginTop: 90,
+    //  marginTop: 10,
+    
+   
   }, 
   publishercontainer:{
       fontSize: 15,
-      marginVertical: 8,
-      marginHorizontal: 16,
-      color: 'yellow'
+      // marginVertical: 8,
+      marginTop: 10,
+      color: '#BC0022'
   },
+
+  button:{  
+    backgroundColor: 'red',
+    width: 50,
+    borderRadius: 30,
+    // margin: 50
+    // hight: 100,
+    // borderRadius: 80,
+   
+  }
  
 })
 
