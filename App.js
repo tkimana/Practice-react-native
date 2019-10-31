@@ -96,9 +96,7 @@ class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#F2F8FD',
-    // flex: 1,
-    // resizeMode: 'cover',
-    // position: 'relative',
+    
    
   },
 
@@ -108,7 +106,7 @@ const styles = StyleSheet.create({
    borderRadius: 30,
    paddingHorizontal:16,
    fontSize: 20,
-  //  color: '#fffff',
+ 
    marginVertical:10,
    padding:4,
    flex: 1,
@@ -122,7 +120,7 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     paddingHorizontal:16,
     fontSize: 20,
-    // color: '#fffff',
+    
     marginVertical:20,
     padding:5,
     flex: 1,
