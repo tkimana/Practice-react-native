@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, ActivityIndicator, ImageBackground, TextInput, StatusBar, Button, ScrollView} from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, ActivityIndicator, ImageBackground, TextInput, StatusBar, Button, ScrollView, Form} from 'react-native';
 import PostContainer from './components/PostContainer';
 
 
@@ -7,9 +7,10 @@ class App extends React.Component {
      state={
        recipes: [], 
        displayRecipes: [],
-      //  title: '',
-      //  image_url:'',
-      //  publisher:'',
+       name: "",
+       title: "",
+       publisher: "",
+       image_url: ""
       
      }
 
@@ -30,25 +31,27 @@ class App extends React.Component {
   }
 
 
-  onChange=(title, publisher, image_url)=>{
-    
-   console.log(title, publisher, image_url)
+  onChange=(e)=>{
+   this.setState({
+     [e.target.name]: e.target.value
+   }) 
+   
     
   }
  
  handleSubmit=()=>{
-   
+  
   fetch('http://localhost:3000/recipes', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      recipes:{
-        title: title,
-        image_url: image_url,
-        publisher: publisher
-      }
+      recipes:[{
+        title: this.state.title,
+        image_url: this.state.image_url,
+        publisher: this.state.publisher
+      }]
       .then(res=> res.json())
       .then(recipe=>{
         this.setState({
@@ -69,15 +72,15 @@ class App extends React.Component {
 <ScrollView scrollEventThrottle={25}>  
     <ImageBackground   style={styles.container} style={{height: '100%', width: '100%'}} >
     <StatusBar hidden/>
-    
+ 
   <TextInput style={styles.InputBox} onChangeText={(title) => this.onChange(title, 'title')}
-        value={this.state.title}  placeholder="Title" /> 
+        value={this.state.title}  placeholder="Title" name="Title" /> 
 
      <TextInput style={styles.PublisherInput} onChangeText={(publisher) => this.onChange(publisher, 'publisher')}
-        value={this.state.publisher}  placeholder="Publisher" /> 
+        value={this.state.publisher}  placeholder="Publisher" name="Publisher" /> 
 
     <TextInput style={styles.InputField} onChangeText={(image_url) => this.onChange(image_url, 'image_url')}
-    value={this.state.image_url}  placeholder="image_url" />
+    value={this.state.image_url}  placeholder="image_url" name="image_url" />
 
       <TouchableOpacity style={styles.buttonInput}  onPress={() => this.handleSubmit}>
         <Text style={styles.button} style={{height: '100%', width: '100%', margin: 10, marginLeft: 43}}>Submit</Text>
@@ -148,9 +151,6 @@ const styles = StyleSheet.create({
    
 
   },
-  // buttonText:{
-  //  marginLeft: 100   
-  // }
 
 });
 
