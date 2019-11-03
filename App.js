@@ -68,7 +68,7 @@ class App extends React.Component {
   render(){
    
   return (
-//  <View style={styles.container}>
+
 <ScrollView scrollEventThrottle={25}>  
     <ImageBackground   style={styles.container} style={{height: '100%', width: '100%'}} >
     <StatusBar hidden/>

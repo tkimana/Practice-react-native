@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
     height: 270,
     padding: 10,
     marginBottom: 200,
-    // borderBottomLeftRadius: 200,
+    
     
   },
 
