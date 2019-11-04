@@ -75,13 +75,12 @@ const styles = StyleSheet.create({
      fontFamily: 'Cochin', 
      color: '#2F3640',
      marginTop: 90,
-    //  marginTop: 10,
+   
     
    
   }, 
   publishercontainer:{
       fontSize: 15,
-      // marginVertical: 8,
       marginTop: 10,
       color: '#BC0022'
   },
@@ -90,10 +89,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'red',
     width: 50,
     borderRadius: 30,
-    // margin: 50
-    // hight: 100,
-    // borderRadius: 80,
-   
+    
   }
  
 })
