@@ -10,7 +10,8 @@ class App extends React.Component {
        name: "",
        title: "",
        publisher: "",
-       image_url: ""
+       image_url: "",
+       isLoading: true
       
      }
 
@@ -23,7 +24,8 @@ class App extends React.Component {
       console.log(data)
       this.setState({
         recipes: data,
-        displayRecipes: data
+        displayRecipes: data,
+        isLoading: !this.state.isLoading
       });
      
     });
@@ -69,10 +71,13 @@ class App extends React.Component {
    
   return (
 
-<ScrollView scrollEventThrottle={25}>  
+<ScrollView scrollEventThrottle={25}> 
+{this.state.isLoading ?  
+  <Text style={styles.loading}>Loading...</Text> :
     <ImageBackground   style={styles.container} style={{height: '100%', width: '100%'}} >
     <StatusBar hidden/>
- 
+    
+
   <TextInput style={styles.InputBox} onChangeText={(title) => this.onChange(title, 'title')}
         value={this.state.title}  placeholder="Title" name="Title" /> 
 
@@ -85,11 +90,16 @@ class App extends React.Component {
       <TouchableOpacity style={styles.buttonInput}  onPress={() => this.handleSubmit}>
         <Text style={styles.button} style={{height: '100%', width: '100%', margin: 10, marginLeft: 43}}>Submit</Text>
         </TouchableOpacity>
+ 
 
-     
      <PostContainer recipes={this.state.recipes}/>
+    
     </ImageBackground>
+}
+
     </ScrollView>
+
+
   
   );
   }
@@ -151,6 +161,12 @@ const styles = StyleSheet.create({
    
 
   },
+  loading:{
+    margin: 400,
+    // marginRight: 400,\
+    fontSize: 40,
+    color: '#9F2B68',
+  }
 
 });
 
