@@ -1,6 +1,6 @@
 import React from 'react';
 import PostItem from './PostItem'
-import { StyleSheet, Text, View, TouchableOpacity, ActivityIndicator, TextInput , StatusBar, SafeAreaView} from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, StatusBar, SafeAreaView} from 'react-native';
 
 
 class PostContainer extends React.Component {
