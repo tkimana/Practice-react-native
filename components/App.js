@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, ActivityIndicator, ImageBackground, TextInput, StatusBar, Button, ScrollView, Form} from 'react-native';
-import PostContainer from './components/PostContainer';
+import PostContainer from './PostContainer';
 
 
 class App extends React.Component {
@@ -18,7 +18,7 @@ class App extends React.Component {
 
   componentDidMount(){
 
-    fetch('http://localhost:3000/recipes')
+    fetch('http://localhost:3002/recipes')
     .then(res=> res.json())
     .then(data =>{
       console.log(data)
@@ -43,7 +43,7 @@ class App extends React.Component {
  
  handleSubmit=()=>{
   
-  fetch('http://localhost:3000/recipes', {
+  fetch('http://localhost:3002/recipes', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
