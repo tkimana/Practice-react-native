@@ -18,7 +18,7 @@ class App extends React.Component {
 
   componentDidMount(){
 
-    fetch('http://localhost:3002/recipes')
+    fetch('http://localhost:3000/recipes')
     .then(res=> res.json())
     .then(data =>{
       console.log(data)
@@ -43,7 +43,7 @@ class App extends React.Component {
  
  handleSubmit=()=>{
   
-  fetch('http://localhost:3002/recipes', {
+  fetch('http://localhost:3000/recipes', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
