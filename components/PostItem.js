@@ -60,8 +60,7 @@ const styles = StyleSheet.create({
     height: 270,
     padding: 10,
     marginBottom: 200,
-    
-    
+     
   },
 
   separator:{
@@ -75,8 +74,6 @@ const styles = StyleSheet.create({
      fontFamily: 'Cochin', 
      color: '#2F3640',
      marginTop: 90,
-   
-    
    
   }, 
   publishercontainer:{
