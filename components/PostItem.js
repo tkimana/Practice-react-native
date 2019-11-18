@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, View, TouchableOpacity, ActivityIndicator, Image, Button} from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, ActivityIndicator, Image} from 'react-native';
 
 
 function Separator() {
