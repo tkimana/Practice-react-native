@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, SafeAreaView, ScrollView, StatusBar, TextInput, TouchableOpacity} from 'react-native';
+import { StyleSheet, Text, View, ScrollView, StatusBar, TextInput, TouchableOpacity} from 'react-native';
 
 
 
@@ -122,7 +122,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     paddingHorizontal:16,
     fontSize: 20,
-    // color: '#fffff',
+
     marginVertical:20,
     padding:5,
     flex: 1,
