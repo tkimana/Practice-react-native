@@ -1,54 +1,65 @@
 import React from 'react';
-import { StyleSheet, Text, View, ScrollView, StatusBar, TextInput, TouchableOpacity} from 'react-native';
-
+import { StyleSheet, Text, View, ScrollView, StatusBar, TextInput, TouchableOpacity, Alert, Button, FlatList} from 'react-native';
+import axios, { AxiosRequestConfig, AxiosPromise, AxiosResponse } from 'axios';
 
 
 class RecipeForm extends React.Component{
     state={
-      isLoading: true,
+      // isLoading: true,
       title: "",
       publisher: "",
       image_url: "",
+      id: ""
      
     }
 
-
     addRecipe=(e)=>{
-      debugger
+      // debugger
       this.setState({
         [e.target.name]: e.target.value
       }, console.log(e.target.name))
-     
     }
 
+    handleSubmit=(title, image_url, publisher)=>{
+      // e.preventDefault()
+      console.log(this.state)
 
-    handleSubmit=(e)=>{
-      e.preventDefault()
-      debugger
-      fetch('http://localhost:3000/recipes', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          recipes:[{
-            title: this.state.title,
-            image_url: this.state.image_url,
-            publisher: this.state.publisher
-          }]
-          .then(res=> res.json())
-          .then(obj=>{
-            this.props.addSome(obj)
-            })
+      axios.post('http://localhost:3000/recipes', this.state)
+          .then(response=> {
+            console.log(response)
+             this.setState({
+              response: this.state 
+             })
           })
-        })
+      // debugger
+      // fetch('http://localhost:3000/recipes', {
+      //   method: 'POST',
+      //   headers: {
+      //     'Content-Type': 'application/json',
+      //   },
+      //   body: JSON.stringify({
+      //       recipe:[{ 
+      //       title:this.state.title,
+      //       image_url: this.state.image_url,
+      //       publisher: this.state.publisher
+      //       }]
+      //     .then(res=> res.json())
+      //     .then(recipe=>{
+      //       this.setState({
+      //         recipes: [this.state.recipes, recipe]
+      //       })
+      //       })
+      //     })
+      //   })
      }
 
-
 render(){
+  // const { title, image_url, publisher, id }= this.setState({
+  //   response: this.state.response
+  // })
   return(
     <View>
-      {/* <Text> */}
+   
     <ScrollView scrollEventThrottle={25}> 
    {/* {this.state.isLoading ?   */}
   {/* <Text style={styles.loading}>Loading...</Text> : */}
@@ -65,9 +76,10 @@ render(){
     <TextInput style={styles.InputField} onChange={(e) => this.addRecipe(e)}
     value={this.state.image_url}  placeholder="image_url" name="image_url" />
 
-      <TouchableOpacity style={styles.buttonInput}  onPress={() => this.handleSubmit}>
-        <Text style={styles.button} style={{height: '100%', width: '100%', margin: 10, marginLeft: 43}}>Submit</Text>
-        </TouchableOpacity>
+      <Button style={styles.buttonInput} style={styles.button} style={{height: '100%', width: '100%', margin: 8, marginLeft: 43}} title="Submit"
+          onPress={this.handleSubmit} />
+        {/* <Text >Submit</Text> */}
+     
 
     {/* </ImageBackground> */}
 

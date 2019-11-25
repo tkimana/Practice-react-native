@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, ActivityIndicator, ImageBackground, TextInput, StatusBar, Button, ScrollView, Form} from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, ActivityIndicator, ImageBackground, TextInput, StatusBar, Button, ScrollView, Form, FlatList} from 'react-native';
 import PostContainer from './components/PostContainer';
 import RecipeForm from './components/RecipeForm';
 
@@ -39,44 +39,42 @@ class App extends React.Component {
   this.setState({
     recipes: arr,
     displayRecipes: arr
-  })
-
+  }, console.log('yes',this.state.recipes))
   }
  
- handleSubmit=()=>{
+//  handleSubmit=()=>{ 
+//   fetch('http://localhost:3000/recipes', {
   
-  fetch('http://localhost:3000/recipes', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      recipes:[{
-        title: this.state.title,
-        image_url: this.state.image_url,
-        publisher: this.state.publisher
-      }]
-      .then(res=> res.json())
-      .then(recipe=>{
-        this.setState({
-          recipes: [...this.state.recipes, recipe]
-        })
-      })
-    })
-  })
- }
-
-
- 
+//     method: 'POST',
+//     headers: {
+//       'Content-Type': 'application/json',
+//     },
+    
+//     body: JSON.stringify({
+//       recipes:[{
+//         title: this.state.title,
+//         image_url: this.state.image_url,
+//         publisher: this.state.publisher
+//       }]
+//       .then(res=> res.json())
+//       .then(recipe=>{
+//         this.setState({
+//           recipes: [...this.state.recipes, recipe]
+//         }, console.log('yap', this.state.recipes))
+//       })
+//     })
+//   })
+//  }
 
   render(){
    
   return (
-    <View>
-    <RecipeForm addSome={this.addSome}/>
-   <PostContainer recipes={this.state.displayRecipes}/>
+    <View >
+        <ScrollView>
+            <RecipeForm addSome={this.addSome}/>
+            <PostContainer recipes={this.state.displayRecipes}/>
+        </ScrollView>  
     </View>
-  
   );
   }
 }
