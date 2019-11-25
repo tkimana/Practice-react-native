@@ -42,29 +42,7 @@ class App extends React.Component {
   }, console.log('yes',this.state.recipes))
   }
  
-//  handleSubmit=()=>{ 
-//   fetch('http://localhost:3000/recipes', {
-  
-//     method: 'POST',
-//     headers: {
-//       'Content-Type': 'application/json',
-//     },
-    
-//     body: JSON.stringify({
-//       recipes:[{
-//         title: this.state.title,
-//         image_url: this.state.image_url,
-//         publisher: this.state.publisher
-//       }]
-//       .then(res=> res.json())
-//       .then(recipe=>{
-//         this.setState({
-//           recipes: [...this.state.recipes, recipe]
-//         }, console.log('yap', this.state.recipes))
-//       })
-//     })
-//   })
-//  }
+
 
   render(){
    
