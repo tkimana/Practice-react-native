@@ -5,7 +5,7 @@ import axios, { AxiosRequestConfig, AxiosPromise, AxiosResponse } from 'axios';
 
 class RecipeForm extends React.Component{
     state={
-      // isLoading: true,
+    
       title: "",
       publisher: "",
       image_url: "",
