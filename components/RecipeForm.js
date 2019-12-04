@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, ScrollView, StatusBar, TextInput, TouchableOpacity, Alert, Button, FlatList} from 'react-native';
-import axios, { AxiosRequestConfig, AxiosPromise, AxiosResponse } from 'axios';
+import axios, { } from 'axios';
 
 
 class RecipeForm extends React.Component{
