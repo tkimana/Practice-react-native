@@ -54,9 +54,7 @@ class RecipeForm extends React.Component{
      }
 
 render(){
-  // const { title, image_url, publisher, id }= this.setState({
-  //   response: this.state.response
-  // })
+ 
   return(
     <View>
    
