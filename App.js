@@ -8,7 +8,6 @@ class App extends React.Component {
      state={
        recipes: [], 
        displayRecipes: [],
-     
        isLoading: true
       
      }
