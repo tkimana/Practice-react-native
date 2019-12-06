@@ -8,13 +8,11 @@ class App extends React.Component {
      state={
        recipes: [], 
        displayRecipes: [],
-       isLoading: true
-      
+       isLoading: true 
      }
 
 
   componentDidMount(){
-
     fetch('http://localhost:3000/recipes')
     .then(res=> res.json())
     .then(data =>{
