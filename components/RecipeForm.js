@@ -83,7 +83,7 @@ render(){
 
 
     </ScrollView>
-          {/* </Text> */}
+         
     </View>
   )  
    }
@@ -149,7 +149,7 @@ const styles = StyleSheet.create({
   },
   loading:{
     margin: 400,
-    // marginRight: 400,\
+    
     fontSize: 40,
     color: '#9F2B68',
   }
