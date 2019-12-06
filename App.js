@@ -10,7 +10,7 @@ class App extends React.Component {
        displayRecipes: [],
        name: "",
        title: "",
-       publisher: "",
+    
        isLoading: true
       
      }
