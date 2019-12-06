@@ -6,7 +6,6 @@ import { StyleSheet, Text, View, SafeAreaView} from 'react-native';
 class PostContainer extends React.Component {
    
     
-
     render() {
         console.log(this.props.recipes)
         return (
