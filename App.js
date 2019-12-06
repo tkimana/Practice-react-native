@@ -11,7 +11,6 @@ class App extends React.Component {
        name: "",
        title: "",
        publisher: "",
-       image_url: "",
        isLoading: true
       
      }
