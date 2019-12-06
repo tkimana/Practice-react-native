@@ -9,8 +9,6 @@ class App extends React.Component {
        recipes: [], 
        displayRecipes: [],
        name: "",
-       title: "",
-    
        isLoading: true
       
      }
