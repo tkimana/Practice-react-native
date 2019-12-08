@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Button, ScrollView, Form, FlatList} from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, ActivityIndicator, ImageBackground, TextInput, StatusBar, Button, ScrollView, Form, FlatList} from 'react-native';
 import PostContainer from './components/PostContainer';
 import RecipeForm from './components/RecipeForm';
 
