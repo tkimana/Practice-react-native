@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, View, TouchableOpacity, ActivityIndicator, Image} from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, ActivityIndicator, Image, Button} from 'react-native';
 
 
 function Separator() {
@@ -23,9 +23,9 @@ function PostItem(props) {
                     /> 
                 </View>
                 <View>
-                <TouchableOpacity  onPress={() => this.handleChange}>
-             <Text style={styles.button}> Like </Text>
-        </TouchableOpacity>
+                <Button  onPress={() => this.handleChange} style={styles.button} style={{ title: 'like'}}
+           
+        />
                 </View>
                 <View>
                   <Text style={styles.publishercontainer}>Publisher: {props.publisher}</Text>
@@ -86,6 +86,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'red',
     width: 50,
     borderRadius: 30,
+   
     
   }
  

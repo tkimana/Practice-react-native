@@ -13,7 +13,7 @@ class PostContainer extends React.Component {
         
                 <View >
                     {this.props.recipes.map((recipe) => (
-                        <PostItem {...recipe} key={recipe.recipe_id} />
+                        <PostItem {...recipe} key={recipe.id} />
                     ))}    
                 </View>
             </SafeAreaView>
