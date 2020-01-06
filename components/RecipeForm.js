@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, ScrollView, StatusBar, TextInput, TouchableOpacity, Alert, Button, FlatList} from 'react-native';
+import { StyleSheet, View, ScrollView, StatusBar, TextInput, TouchableOpacity, Alert, Button, FlatList} from 'react-native';
 import axios, { } from 'axios';
 
 
