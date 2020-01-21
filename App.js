@@ -1,5 +1,5 @@
 import React from 'react';
-import {View,  ScrollView, Form, FlatList} from 'react-native';
+import {View,  ScrollView, FlatList} from 'react-native';
 import PostContainer from './components/PostContainer';
 import RecipeForm from './components/RecipeForm';
 
