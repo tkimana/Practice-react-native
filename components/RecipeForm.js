@@ -20,7 +20,7 @@ class RecipeForm extends React.Component{
       }, console.log(e.target.name))
     }
 
-    handleSubmit=(title, image_url, publisher)=>{
+    handleSubmit=(title, image_url)=>{
       // e.preventDefault()
       console.log(this.state)
 
